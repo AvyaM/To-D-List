@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="styles/main.css"/>
+</head>
+<body>
+    <div class = "container">
+        <div class = "date">
+            <h2><%= date %></h2>
+        </div>
+        <form class = "inputs" action = "/" method="post">
+            <input type = "text" name="newItem" placeholder="New Item"  class = "add" autocomplete="off">
+            <button type = "submit" name = "add" class="addButton" >+</button>
+        </form>
+        <div class ="box">
+            <% if(locals.task){  %>
+                <% list.forEach(task => { %>
+                    <div class="item" id="remove">
+                    <input type="checkbox" name="checkbox" class="checkbox" >
+                    <p class = "strikethrough"><%= task %></p>
+                </div>
+                <% }); %>
+                
+            <% };%>
+        </div>
+    </div>
+    
+</body>
+</html>
